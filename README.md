@@ -1,6 +1,19 @@
 # chromium86
 Downgrade to chromium-browser v86 on a Raspberry Pi
 
+## To install
+```
+wget https://github.com/Botspot/chromium86/releases/download/86/chromium86.zip
+unzip chromium86.zip
+rm chromium86.zip
+sudo cp -af ~/chromium86/. /
+```
+
+## To revert back to latest chromium-browser
+```
+sudo apt install --reinstall chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra rpi-chromium-mods
+```
+
 ### How to create your own archives for any package(s) you want
 
 1. Determine what files a package installs. I use `synaptic` package manager: Right-click on the package name -> Properties -> Installed files -> Ctrl+A -> Ctrl+C -> Ctrl+V into a text editor. Repeat the same steps for every package you want to archive. In this case, I repeated this process for `chromium-browser`, `chromium-browser-l10n`, `chromium-codecs-ffmpeg-extra`, and `rpi-chromium-mods`.
